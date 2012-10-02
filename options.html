@@ -1,0 +1,41 @@
+<html>
+<head><title>Ydolmaster Extension Options</title></head>
+<script type="text/javascript">
+
+// Saves options to localStorage.
+function save_options() {
+  var wait_msec = document.getElementById("wait_msec").value;
+  localStorage.setItem("wait_msec", wait_msec);
+
+  // Update status to let user know options were saved.
+  alert("Options saved.");
+  /*
+  var status = document.getElementById("status");
+  status.innerHTML = "Options Saved.";
+  setTimeout(function() {
+    status.innerHTML = "";
+  }, 750);
+  */
+}
+
+// Restores select box state to saved value from localStorage.
+function restore_options() {
+  var wait_msec = localStorage.getItem("wait_msec");
+  if (!wait_msec) {
+    document.getElementById("wait_msec").value = "---";
+  } else {
+    document.getElementById("wait_msec").value = wait_msec;
+  }
+}
+
+</script>
+
+<body onload="restore_options()">
+
+wait (msec):
+<input type="text" id="wait_msec" />
+
+<br>
+<button onclick="save_options()">Save</button>
+</body>
+</html>

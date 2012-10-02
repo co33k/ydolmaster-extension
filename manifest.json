@@ -1,0 +1,54 @@
+{
+  "name": "THE AUTO-yDOLM@STER",
+  "version": "0.4.4",
+  "description": "YDOLM@STER.",
+  "content_scripts": [
+    {
+      "matches": ["http://www.ydolmaster.com/training/do?*"],
+      "js": ["goback.js"]
+    },
+    {
+      "matches": ["http://www.ydolmaster.com/training?*",
+                  "http://www.ydolmaster.com/training/?rand=*"],
+      "js": ["training.js"]
+    },
+    {
+      "matches": ["http://www.ydolmaster.com/shop/buy?*"],
+      "js": ["shop.js"]
+    },
+    {
+      "matches": ["http://www.ydolmaster.com/users/items/?*"],
+      "js": ["gokgok.js"]
+    },
+    {
+      "matches": ["http://www.ydolmaster.com/users/items_use/?*"],
+      "js": ["items_use.js"]
+    },
+    {
+      "matches": ["http://www.ydolmaster.com/live/?*"],
+      "js": ["live_list.js"]
+    },
+
+    {
+      "matches": ["http://www.ydolmaster.com/live/8/play/*",
+                  "http://www.ydolmaster.com/live/11/play/*",
+                  "http://www.ydolmaster.com/live/15/play/*"],
+      "js": ["noop.js"]
+    },
+    {
+      "matches": ["http://www.ydolmaster.com/live/8/result/*",
+                  "http://www.ydolmaster.com/live/11/result/*",
+                  "http://www.ydolmaster.com/live/15/result/*"],
+      "js": ["live_result.js"]
+    },
+    {
+      "matches": ["http://www.ydolmaster.com/live/8/",
+                  "http://www.ydolmaster.com/live/11/",
+                  "http://www.ydolmaster.com/live/15/"],
+      "js": ["live.js"]
+    }
+
+  ],
+  "permissions" : [],
+  "options_page" : "options.html"
+}
